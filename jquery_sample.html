@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sample JQuery</title>
+    <style>
+        .green {
+            background-color: green;
+            height: 50px;
+            width: 50px;
+            border-radius: 50px;
+            opacity: 0.3;
+        }
+        .orange {
+            background-color: orange;
+            height: 50px;
+            width: 50px;
+            border-radius: 50px;
+            opacity: 0.3;
+        }
+        .red {
+            background-color: red;
+            height: 50px;
+            width: 50px;
+            border-radius: 50px;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <input type="text" id="name">
+    <button id="btn-register">Register</button>
+    <button id="btn-change">Change</button>
+
+    <div class="green"></div>
+    <div class="orange"></div>
+    <div class="red"></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+        // $("#btn-change").on("click", function(){
+        //     alert("hello");
+        //     //console.log("hello");
+        // });
+
+        // $(document).ready(function(){
+        //     //console.log("hello");
+        //     //alert("hello");
+        // });
+
+        $("div").ready(function(){
+            console.log("hello");
+            $(".green").animate({
+                opacity: 1,
+            },1000,function() {}
+            );
+
+            $(".orange").animate({
+                opacity: 0.3,
+            },1000,function() {}
+            );
+
+            $(".red").animate({
+                opacity: 0.3,
+            },1000,function() {}
+            );
+        });
+
+        $("div").ready(function(){
+            console.log("hello");
+            $(".green").animate({
+                opacity: 0.3,
+            },2000,function() {}
+            );
+
+            $(".orange").animate({
+                opacity: 1,
+            },2000,function() {}
+            );
+
+            $(".red").animate({
+                opacity: 0.3,
+            },2000,function() {}
+            );
+        });
+
+        $("div").ready(function(){
+            console.log("hello");
+            $(".green").animate({
+                opacity: 0.3,
+            },3000,function() {}
+            );
+
+            $(".orange").animate({
+                opacity: 0.3,
+            },3000,function() {}
+            );
+
+            $(".red").animate({
+                opacity: 1,
+            },3000,function() {}
+            );
+        });
+
+    </script>
+</body>
+</html>
