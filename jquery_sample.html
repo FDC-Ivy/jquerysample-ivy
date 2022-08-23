@@ -8,6 +8,7 @@
             height: 50px;
             width: 50px;
             border-radius: 50px;
+            margin: auto;
             opacity: 0.3;
         }
         .orange {
@@ -15,6 +16,7 @@
             height: 50px;
             width: 50px;
             border-radius: 50px;
+            margin: auto;
             opacity: 0.3;
         }
         .red {
@@ -22,32 +24,39 @@
             height: 50px;
             width: 50px;
             border-radius: 50px;
-            opacity: 0.3;
+            margin: auto;
+            opacity: 1;
         }
     </style>
 </head>
 <body>
     <div class="box"></div>
-    <input type="text" id="name">
+    <input type="text" id="firstname">
     <button id="btn-register">Register</button>
     <button id="btn-change">Change</button>
 
     <hr>
 
     <div class="con">
-        <div class="green"></div>
-        <div class="orange"></div>
         <div class="red"></div>
+        <div class="orange"></div>
+        <div class="green"></div>
     </div>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     <script>
-        // $("#btn-change").on("click", function(){
-        //     alert("hello");
-        //     //console.log("hello");
-        // });
+        $("#btn-register").on("click", function(){
+            var name = $('#firstname').val();
+            alert("hello " + name);
+        });
+
+        $("#btn-change").on("click", function(){
+            
+                $("#firstname").val("");
+            
+        });
 
         // $(document).ready(function(){
         //     //console.log("hello");
@@ -56,7 +65,7 @@
 
         $("div").ready(function(){
             $(".green").animate({
-                opacity: 1,
+                opacity: 0.3,
             },1000,function() {}
             );
 
@@ -66,7 +75,7 @@
             );
 
             $(".red").animate({
-                opacity: 0.3,
+                opacity: 1,
             },1000,function() {}
             );
         });
@@ -90,7 +99,7 @@
 
         $("div").ready(function(){
             $(".green").animate({
-                opacity: 0.3,
+                opacity: 1,
             },3000,function() {}
             );
 
@@ -100,7 +109,7 @@
             );
 
             $(".red").animate({
-                opacity: 1,
+                opacity: 0.3,
             },3000,function() {}
             );
         });
