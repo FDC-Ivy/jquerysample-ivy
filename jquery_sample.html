@@ -3,6 +3,15 @@
 <head>
     <title>Sample JQuery</title>
     <style>
+        .con {
+            border: 2px solid gray;
+            border-radius: 10px;
+            margin: auto;
+            height: 160px;
+            width: 70px;
+            padding-top: 10px;
+            background-color: black;
+        }
         .green {
             background-color: green;
             height: 50px;
@@ -27,6 +36,31 @@
             margin: auto;
             opacity: 1;
         }
+        .stand {
+            height: 300px;
+            width: 10px;
+            margin: auto;
+            background-color: black;
+        }
+        .stand2 {
+            height: 10px;
+            width: 70px;
+            margin: auto;
+            top: 500px;
+            background-color: black;
+        }
+        .indicator {
+            margin-right: 200px;
+            height: 70px;
+            width: 200px;
+            color: black;
+            float: left;
+            font-size: 50px;
+            border: none;
+        }
+        table {
+            margin-left: 300px;
+        }
     </style>
 </head>
 <body>
@@ -37,12 +71,22 @@
 
     <hr>
 
-    <div class="con">
-        <div class="red"></div>
-        <div class="orange"></div>
-        <div class="green"></div>
-    </div>
-
+    <table>
+        <tr>
+            <td>
+                <input type="text" class="indicator">
+            </td>
+            <td>
+                <div class="con">
+                    <div class="red"></div>
+                    <div class="orange"></div>
+                    <div class="green"></div>
+                </div>
+                <div class="stand"></div>
+                <div class="stand2"></div>
+            </td>
+        </tr>
+    </table>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
@@ -63,56 +107,123 @@
         //     //alert("hello");
         // });
 
-        $("div").ready(function(){
-            $(".green").animate({
-                opacity: 0.3,
-            },1000,function() {}
-            );
+        // $("div").ready(function(){
+        //     $(".green").animate({
+        //         opacity: 0.3,
+        //     },1000,function() {}
+        //     );
 
-            $(".orange").animate({
-                opacity: 0.3,
-            },1000,function() {}
-            );
+        //     $(".orange").animate({
+        //         opacity: 0.3,
+        //     },1000,function() {}
+        //     );
 
-            $(".red").animate({
-                opacity: 1,
-            },1000,function() {}
-            );
-        });
+        //     $(".red").animate({
+        //         opacity: 1,
+        //     },1000,function() {}
+        //     );
+        // });
 
-        $("div").ready(function(){
-            $(".green").animate({
-                opacity: 0.3,
-            },2000,function() {}
-            );
+        // $("div").ready(function(){
+        //     $(".green").animate({
+        //         opacity: 0.3,
+        //     },2000,function() {}
+        //     );
 
-            $(".orange").animate({
-                opacity: 1,
-            },2000,function() {}
-            );
+        //     $(".orange").animate({
+        //         opacity: 1,
+        //     },2000,function() {}
+        //     );
 
-            $(".red").animate({
-                opacity: 0.3,
-            },2000,function() {}
-            );
-        });
+        //     $(".red").animate({
+        //         opacity: 0.3,
+        //     },2000,function() {}
+        //     );
+        // });
 
-        $("div").ready(function(){
-            $(".green").animate({
-                opacity: 1,
-            },3000,function() {}
-            );
+        // $("div").ready(function(){
+        //     $(".green").animate({
+        //         opacity: 1,
+        //     },3000,function() {}
+        //     );
 
-            $(".orange").animate({
-                opacity: 0.3,
-            },3000,function() {}
-            );
+        //     $(".orange").animate({
+        //         opacity: 0.3,
+        //     },3000,function() {}
+        //     );
 
-            $(".red").animate({
-                opacity: 0.3,
-            },3000,function() {}
-            );
-        });
+        //     $(".red").animate({
+        //         opacity: 0.3,
+        //     },3000,function() {}
+        //     );
+        // });
+
+        function trafficSignal(){
+
+            $("div").ready(function(){
+                $(".green").animate({
+                    opacity: 0.3,
+                },1000,function() {}
+                );
+
+                $(".orange").animate({
+                    opacity: 0.3,
+                },1000,function() {}
+                );
+
+                $(".red").animate({
+                    opacity: 1,
+                },1000,function() {$(".indicator").val("Stop");$(".indicator").css("color","red");}
+                );
+
+                
+            });
+
+            $("div").ready(function(){
+                $(".green").animate({
+                    opacity: 0.3,
+                },2000,function() {}
+                );
+
+                $(".orange").animate({
+                    opacity: 1,
+                },2000,function() {$(".indicator").val("Ready");$(".indicator").css("color","orange");}
+                );
+
+                $(".red").animate({
+                    opacity: 0.3,
+                },2000,function() {}
+                );
+
+                
+            });
+
+            $("div").ready(function(){
+                $(".green").animate({
+                    opacity: 1,
+                },3000,function() {$(".indicator").val("Go");$(".indicator").css("color","green");}
+                );
+
+                $(".orange").animate({
+                    opacity: 0.3,
+                },3000,function() {}
+                );
+
+                $(".red").animate({
+                    opacity: 0.3,
+                },3000,function() {}
+                );
+
+                
+            });
+
+        }
+
+        var signal = setInterval(function () {
+            trafficSignal();
+        },1300);
+    
+        trafficSignal();
 
     </script>
 </body>
